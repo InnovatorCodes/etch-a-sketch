@@ -1,0 +1,31 @@
+.row{
+    display: flex;
+    justify-content: center;
+    flex: auto;
+    height: 10vw;
+    border-style: solid;
+    border-color: black;
+    border-top: 2px;
+    border-bottom: 2px;
+}
+.col{
+    flex: auto;
+    width: 10vw;
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: 0;
+    flex-grow: 0;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+}
+
+body{
+    display: flex;
+    flex: auto;
+    justify-content: center;
+    align-items: center;
+    flex: auto;
+    height: 95vh;
+}
