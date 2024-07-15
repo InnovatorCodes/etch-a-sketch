@@ -3,18 +3,23 @@
     justify-content: center;
     flex: auto;
     height: 10vw;
-    border-style: solid;
-    border-color: black;
-    border-top: 2px;
-    border-bottom: 2px;
+    border:2px solid black;
+    border-bottom: 0;
 }
+.row:nth-last-child(1){
+    border-bottom: 2px solid black;
+}
+
 .col{
     flex: auto;
     width: 10vw;
-    border: 1px solid black;
     border-collapse: collapse;
+    border-right: 2px solid black;
     margin: 0;
     flex-grow: 0;
+}
+.col:nth-last-child(1){
+    border: 0;
 }
 .container{
     display: flex;
