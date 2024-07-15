@@ -13,7 +13,13 @@ for(let i=0;i<4;i++){
 }
 container.addEventListener('mouseover',(event)=>{
     const target=event.target;
-    if(target.classList.value=='col') target.classList.add('colour');
+    if(target.classList.value=='col'){
+        target.classList.add('colour');
+        let r=Math.floor(Math.random()*255);
+        let g=Math.floor(Math.random()*255);
+        let b=Math.floor(Math.random()*255);
+        target.style.backgroundColor='rgb('+r+','+g+','+b+')';
+    } 
 })
 function changeSquareNumber(num){
     while(container.firstChild){
@@ -39,6 +45,7 @@ const changeButton=document.querySelector('button.change');
 changeButton.addEventListener('click',()=>{
     num=Number(prompt('Enter New Number of Squares per Side (max 100 squares):'));
     if(num){
+        num=(num>100)?100:num;
         changeSquareNumber(num);
     }
 })
