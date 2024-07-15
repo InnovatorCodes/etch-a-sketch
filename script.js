@@ -11,3 +11,7 @@ for(let i=0;i<4;i++){
     }
     container.appendChild(rowdiv);
 }
+container.addEventListener('mouseover',(event)=>{
+    const target=event.target;
+    if(target.classList.value=='col') target.classList.add('colour');
+})
