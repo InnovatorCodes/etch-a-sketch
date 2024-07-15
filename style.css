@@ -2,21 +2,23 @@
     display: flex;
     justify-content: center;
     flex: auto;
-    height: 10vw;
-    border:2px solid black;
+    height: 180px;
+    border:1px solid black;
     border-bottom: 0;
+    box-sizing: border-box;
 }
 .row:nth-last-child(1){
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black;
 }
 
 .col{
     flex: auto;
-    width: 10vw;
+    width: 180px;
     border-collapse: collapse;
-    border-right: 2px solid black;
+    border-right: 1px solid black;
     margin: 0;
     flex-grow: 0;
+    box-sizing: border-box;
 }
 .col:nth-last-child(1){
     border: 0;
@@ -33,7 +35,19 @@ body{
     align-items: center;
     flex: auto;
     height: 95vh;
+    flex-direction: column;
+    gap:5px;
+    padding-top: 15px;
 }
 .colour{
-    background-color: yellow;
+    background-color: red;
+}
+
+button.change{
+    background-color: #3882F6;
+    color: white;
+    border: none;
+    padding: 2vh 1vw;
+    border-radius: 7px;
+    cursor: pointer;
 }
