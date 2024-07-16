@@ -71,3 +71,8 @@ increment.addEventListener('click',()=>{
     increment.classList.toggle('clicked');
     incrementing=!incrementing;
 })
+
+const rstbutton=document.querySelector('.reset');
+rstbutton.addEventListener('click',()=>{
+    changeSquareNumber(squares);
+})

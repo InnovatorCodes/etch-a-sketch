@@ -51,6 +51,11 @@ button {
     border-radius: 7px;
     cursor: pointer;
 }
+
+button.reset{
+    background-color: #f01e2c;
+}
+
 .clicked{
     background-color: white;
     border: 2px solid black;
