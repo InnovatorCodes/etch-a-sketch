@@ -6,6 +6,7 @@ let colour='';
 let diffcolour=false;  
 let eraser=false; 
 let mousedown=false;
+let ctrldown=false;
 const colorpick=document.querySelector('.colorpick');
 for(let i=0;i<4;i++){
     const rowdiv=document.createElement('div');
@@ -21,7 +22,7 @@ for(let i=0;i<4;i++){
 }
 container.addEventListener('mouseover',(event)=>{
     const target=event.target;
-    if(!eraser){
+    if(!eraser && !ctrldown){
         if(target.classList.value=='col' && !target.classList.contains('colour')){
             target.classList.add('colour');
             let r=Math.floor(Math.random()*255);
@@ -38,7 +39,7 @@ container.addEventListener('mouseover',(event)=>{
             target.style.opacity=''+op;
         }
     }
-    else{
+    else if(eraser){
         if(target.classList.contains('col') && target.classList.contains('colour') && mousedown){
             target.classList.remove('colour');
             target.style.backgroundColor='#ffffff';
@@ -57,7 +58,7 @@ function changeSquareNumber(num){
     while(container.firstChild){
         container.removeChild(container.firstChild);
     }
-    let ht=180*4/num;
+    let ht=19*4/num;
     for(let i=0;i<num;i++){
         const rowdiv=document.createElement('div');
         rowdiv.classList.add('row');
@@ -66,10 +67,10 @@ function changeSquareNumber(num){
             const coldiv=document.createElement('div');
             coldiv.classList.add('col')
             coldiv.setAttribute('id',`${j}`)
-            coldiv.style.width=ht+'px';
+            coldiv.style.width=ht+'vmin';
             rowdiv.appendChild(coldiv);
         }
-        rowdiv.style.height=ht+'px';
+        rowdiv.style.height=ht+'vmin';
         container.appendChild(rowdiv);
     }
 }
@@ -78,10 +79,10 @@ const eraserbtn=document.querySelector('.eraser');
 eraserbtn.addEventListener('click',()=>{
     eraserbtn.classList.toggle('clicked');
     eraser=!eraser;
-    randomizeColor=false;
-    incrementing=false;
-    randcolour.classList.remove('clicked');
-    increment.classList.remove('clicked');
+    //randomizeColor=false;
+    //incrementing=false;
+    //randcolour.classList.remove('clicked');
+    //increment.classList.remove('clicked');
 })
 changeButton.addEventListener('click',()=>{
     num=Number(prompt('Enter New Number of Squares per Side (max 100 squares):',4));
@@ -126,3 +127,9 @@ document.addEventListener('mousedown',()=>{
     mousedown=true;
 })
 document.addEventListener('mouseup',()=>{mousedown=false});
+document.addEventListener('keydown',(event)=>{
+    if(event.ctrlKey) ctrldown=true;
+})
+document.addEventListener('keyup',(event)=>{
+    if(!event.ctrlKey) ctrldown=false;
+})

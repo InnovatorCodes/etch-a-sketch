@@ -1,18 +1,19 @@
 h1{
     font-size: 40px;
+    margin: 0;
 }
 .row{
     display: flex;
     justify-content: center;
     flex: auto;
-    height: 180px;
+    height: 19vmin;
     border-bottom: 0;
     box-sizing: border-box;
 }
 
 .col{
     flex: auto;
-    width: 180px;
+    width: 19vmin;
     margin: 0;
     flex-grow: 0;
     box-sizing: border-box;
@@ -24,6 +25,11 @@ h1{
     border: 1px solid black;
 }
 
+.content{
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+}
 body{
     display: flex;
     flex: auto;
