@@ -38,7 +38,7 @@ container.addEventListener('mouseover',(event)=>{
             target.style.opacity=''+op;
         }
     }
-    else if(eraser && ctrldown){
+    else if(eraser && !ctrldown){
         if(target.classList.contains('col') && target.classList.contains('colour')){
             target.classList.remove('colour');
             target.style.backgroundColor='#ffffff';
