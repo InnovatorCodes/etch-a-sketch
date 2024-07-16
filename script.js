@@ -84,7 +84,7 @@ eraserbtn.addEventListener('click',()=>{
     increment.classList.remove('clicked');
 })
 changeButton.addEventListener('click',()=>{
-    num=Number(prompt('Enter New Number of Squares per Side (max 100 squares):'));
+    num=Number(prompt('Enter New Number of Squares per Side (max 100 squares):',4));
     if(num){
         num=(num>100)?100:num;
         squares=num;
