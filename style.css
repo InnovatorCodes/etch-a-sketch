@@ -38,8 +38,8 @@ body{
     flex: auto;
     height: 95vh;
     flex-direction: column;
-    gap:10px;
-    padding-top: 15px;
+    gap:8px;
+    padding-top: 10px;
 }
 .colour{
     background-color: red;
