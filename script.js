@@ -5,7 +5,6 @@ let squares=4;
 let colour='';
 let diffcolour=false;  
 let eraser=false; 
-let mousedown=false;
 let ctrldown=false;
 const colorpick=document.querySelector('.colorpick');
 for(let i=0;i<4;i++){
@@ -39,21 +38,15 @@ container.addEventListener('mouseover',(event)=>{
             target.style.opacity=''+op;
         }
     }
-    else if(eraser){
-        if(target.classList.contains('col') && target.classList.contains('colour') && mousedown){
+    else if(eraser && ctrldown){
+        if(target.classList.contains('col') && target.classList.contains('colour')){
             target.classList.remove('colour');
             target.style.backgroundColor='#ffffff';
         }
     }
 
 })
-container.addEventListener('mousedown',(event)=>{
-    const target=event.target;
-    if(eraser){
-        target.classList.remove('colour');
-        target.style.backgroundColor='#ffffff';
-    }
-})
+
 function changeSquareNumber(num){
     while(container.firstChild){
         container.removeChild(container.firstChild);
@@ -123,10 +116,6 @@ colorpick.addEventListener('change',()=>{
     else diffcolour=false;
 })
 
-document.addEventListener('mousedown',()=>{
-    mousedown=true;
-})
-document.addEventListener('mouseup',()=>{mousedown=false});
 document.addEventListener('keydown',(event)=>{
     if(event.ctrlKey) ctrldown=true;
 })
