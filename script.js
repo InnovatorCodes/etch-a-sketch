@@ -2,6 +2,9 @@ const container=document.querySelector('.container');
 let randomizeColor=false;
 let incrementing=false;
 let squares=4;
+let colour='';
+let diffcolour=false;   
+const colorpick=document.querySelector('.colorpick');
 for(let i=0;i<4;i++){
     const rowdiv=document.createElement('div');
     rowdiv.classList.add('row');
@@ -22,6 +25,7 @@ container.addEventListener('mouseover',(event)=>{
         let g=Math.floor(Math.random()*255);
         let b=Math.floor(Math.random()*255);
         if(randomizeColor) target.style.backgroundColor='rgb('+r+','+g+','+b+')';
+        else if(diffcolour) target.style.backgroundColor=colorpick.value;
         if(incrementing) target.style.opacity='0.1';  
     } 
     else if(target.classList.contains('col') && parseFloat(target.style.opacity)<1){
@@ -75,4 +79,12 @@ increment.addEventListener('click',()=>{
 const rstbutton=document.querySelector('.reset');
 rstbutton.addEventListener('click',()=>{
     changeSquareNumber(squares);
+})
+
+colorpick.addEventListener('change',()=>{
+    if(colorpick.value!='#ff0000'){
+        diffcolour=true;
+        colour=colorpick.value;
+    }
+    else diffcolour=false;
 })

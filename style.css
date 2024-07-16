@@ -1,3 +1,6 @@
+h1{
+    font-size: 40px;
+}
 .row{
     display: flex;
     justify-content: center;
@@ -43,6 +46,12 @@ body{
     background-color: red;
 }
 
+.buttons{
+    display: flex;
+    gap:20px;
+    align-items: center;
+}
+
 button {
     background-color: #3882F6;
     color: white;
@@ -54,6 +63,7 @@ button {
 
 button.reset{
     background-color: #f01e2c;
+    border: none;
 }
 
 .clicked{
